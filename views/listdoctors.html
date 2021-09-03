@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>All Books</title>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="header_container">
+            <table>
+                <tr>
+                    <td><a href="/">Home</a></td>
+                    <td><a href="/adddoctor">Add Doctor</a></td>
+                    <td><a href="/listdoctors">All Doctors</a></td>
+                    <td><a href="/addpatient">Add Patient</a></td>
+                    <td><a href="/listpatients">All Patients</a></td>
+                    <td><a href="/deletepatient">Delete Patient</a></td>
+                    <td><a href="/updatenumpatients">Update Patients</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="content_container"  id="booklist">
+            <h1>All Doctors</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Date of Birth</th>
+                <th>Number of Patients</th>
+
+            </tr>
+            <% for(let j=0; j<doctors.length; j++) { %>
+                <% let d = doctors[j].dateOfBirth %>
+                <% let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d); %>
+                <% let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d); %>
+                <% let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d); %>
+                <% let dateformatted = (`${da}-${mo}-${ye}`); %>
+                <tr>
+                    <td> <%= doctors[j]._id %></td>
+                    <td> <%= doctors[j].fullName.firstName %> <%= doctors[j].fullName.lastName %></td>
+                    <td> <%= doctors[j].address.unit %> <%= doctors[j].address.street %> <%= doctors[j].address.suburb %> <%= doctors[j].address.state %></td>
+                    <td> <%= dateformatted %></td>
+                    <td> <%= doctors[j].numPatients %></td>
+                </tr>
+                <% } %>
+        </table>
+    </div>
+    </body>
+</html>
