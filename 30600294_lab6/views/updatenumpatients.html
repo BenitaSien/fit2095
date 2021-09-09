@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Add Book</title>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="header_container">
+            <table>
+                <tr>
+                    <td><a href="/">Home</a></td>
+                    <td><a href="/adddoctor">Add Doctor</a></td>
+                    <td><a href="/listdoctors">All Doctors</a></td>
+                    <td><a href="/addpatient">Add Patient</a></td>
+                    <td><a href="/listpatients">All Patients</a></td>
+                    <td><a href="/deletepatient">Delete Patient</a></td>
+                    <td><a href="/updatenumpatients">Update Patients</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="content_container">
+
+        <h1>Update number of patients</h1>
+        <form action="postupdatenumpatients" method="POST">
+            <table>
+                <tr>
+            <td>Doctor ID</td> <td><input type="text" name="id" /></td>
+        </tr>
+        <tr>
+            <td>Number of Patients</td> <td><input type="number" name="numPatients" /></td>
+        </tr>
+            
+            <td><button>Submit</button></td>
+            </tr>
+        </table>
+        </form>
+        <br>
+        <h3>Doctors</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+
+            </tr>
+            <% for(let j=0; j<doctors.length; j++) { %>
+                <tr>
+                    <td> <%= doctors[j]._id %></td>
+                    <td> <%= doctors[j].fullName.firstName %> <%= doctors[j].fullName.lastName %></td>
+                </tr>
+                <% } %>
+        </table>
+    </div>
+    </body>
+</html>

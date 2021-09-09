@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>All Books</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td><a href="/">Home</a></td>
+                <td><a href="/addbook">Add Book</a></td>
+                <td><a href="/listbooks">All Books</a></td>
+            </tr>
+        </table>        <table>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Topic</th>
+                <th>Cost</th>
+            </tr>
+            <% for(let j=0; j<books.length; j++) { %>
+                <tr>
+                    <td> <%= books[j].title %></td>
+                    <td> <%= books[j].author %></td>
+                    <td> <%= books[j].topic %></td>
+                    <td> <%= books[j].cost %></td>
+                </tr>
+                <%} %>
+        </table>
+    </body>
+</html>

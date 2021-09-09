@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Add Book</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td><a href="/">Home</a></td>
+                <td><a href="/addbook">Add Book</a></td>
+                <td><a href="/listbooks">All Books</a></td>
+            </tr>
+        </table>
+        <h1>Add new book</h1>
+        <form action="postnewbook" method="POST">
+            Title <input type="text" name="title" />
+            <br/>
+            Author <input type="text" name="author" />
+            <br/>
+            Topic <input type="text" name="topic" />
+            <br/>
+            Cost <input type="number" name="cost" />
+            <br/>
+            <button>Submit</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Add Book</title>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="header_container">
+            <table>
+                <tr>
+                    <td class="header"><a href="/">Home</a></td>
+                    <td class="header"><a href="/addbook">Add Book</a></td>
+                    <td class="header"><a href="/listbooks">All Books</a></td>
+                    <td class="header"><a href="/deletebytopic">Delete</a></td>
+                    <td class="header"><a href="/updatetitle">Update Title</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="content_container">
+
+        <h1>Delete books by topic</h1>
+        <form action="deletebytopic" method="POST">
+            Topic <input type="text" name="topic" />
+            <button>Delete</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>All Books</title>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="header_container">
+            <table>
+                <tr>
+                    <td class="header"><a href="/">Home</a></td>
+                    <td class="header"><a href="/addbook">Add Book</a></td>
+                    <td class="header"><a href="/listbooks">All Books</a></td>
+                    <td class="header"><a href="/deletebytopic">Delete</a></td>
+                    <td class="header"><a href="/updatetitle">Update Title</a></td>
+                </tr>
+            </table>
+        </div> 
+        <div class="content_container"  id="booklist">
+            <h1>All Books</h1>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Topic</th>
+                <th>Date of<br/>Publication</th>
+                <th>Summary</th>
+
+            </tr>
+            <% for(let j=0; j<books.length; j++) { %>
+                <% let d = books[j].publicationDate %>
+                <% let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d); %>
+                <%let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d); %>
+                <%let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d); %>
+                <% let dateformatted = (`${da}-${mo}-${ye}`); %>
+                <tr>
+                    <td> <%= books[j].title %></td>
+                    <td> <%= books[j].author %></td>
+                    <td> <%= books[j].topic %></td>
+                    <td> <%= dateformatted %></td>
+                    <td> <%= books[j].summary %></td>
+                </tr>
+                <%} %>
+        </table>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+
+.header {
+    min-width: fit-content;
+    padding-left: 8px;
+    padding-right: 8px;
+
+}
+
+.header_container {
+    background-color: rgb(58, 83, 48);
+    min-height: fit-content;
+    height: 48px;
+    padding-top: 6px;
+
+}
+
+.content_container {
+    margin: auto;
+    width: 60%;
+    text-align: center;
+}
+
+.content_container table {
+    margin: auto;
+}
+
+th, td {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    text-align: left;
+}
+
+ a {
+    text-decoration: none;
+    color: rgb(58, 83, 48);
+}
+
+
+body {
+    background-color:rgb(248, 248, 248);
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+td.header a {
+    color:rgb(248, 248, 248)
+}
+
+input, textarea, select {
+    width: 150px;
+    height: 30px;
+}
+
+button {
+    height: 30px;
+}
+
+
+#booklist {
+    width: 80%
+}

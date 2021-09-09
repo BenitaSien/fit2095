@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Add Book</title>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="header_container">
+        <table>
+            <tr>
+                <td class="header"><a href="/">Home</a></td>
+                <td class="header"><a href="/addbook">Add Book</a></td>
+                <td class="header"><a href="/listbooks">All Books</a></td>
+                <td class="header"><a href="/deletebytopic">Delete</a></td>
+                <td class="header"><a href="/updatetitle">Update Title</a></td>
+            </tr>
+        </table>
+    </div>
+    <div class="content_container">
+
+        <h1>Update title</h1>
+        <form action="updatetitle" method="POST">
+            <table>
+                <tr>
+            <td>Title</td> <td><input type="text" name="title" /></td>
+        </tr>
+        <tr>
+            <td>Author</td> <td><input type="text" name="author" /></td>
+        </tr>
+        <tr>
+            <td>Topic</td> <td><input type="text" name="topic" /></td>
+        </tr>
+        <tr>
+            <td>Date of Publication</td> <td><input type="text" name="publicationDate" /></td>
+        </tr>
+        <tr>
+            <td>Summary</td> <td><input type="text" name="summary" /></td>
+        </tr>
+        <tr>
+            <td><button>Submit</button></td>
+            </tr>
+        </table>
+        </form>
+    </div>
+    </body>
+</html>
