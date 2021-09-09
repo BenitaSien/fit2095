@@ -71,6 +71,10 @@ app.get("/deletepatient", function(req, res) {
     res.sendFile(viewsPath + "deletepatient.html");
 });
 
+app.get("/deletedoctor", function(req, res) {
+    res.sendFile(viewsPath + "deletedoctor.html");
+});
+
 app.get("/updatenumpatients", function(req, res) {
     Doctor
     .find({},
@@ -109,7 +113,7 @@ app.post("/postNewDoctor", function(req, res) {
     newDoctor.save(function (err) {
         if (err) { 
             console.log("invalid data")
-            res.redirect(viewsPath + "invaliddata.html");
+            res.sendFile(viewsPath + "invaliddata.html");
             return;
         }
         console.log('new doctor successfully added');
@@ -156,6 +160,25 @@ app.post("/postdeletepatient", function(req, res) {
         }
         console.log("patient deleted")
         res.redirect("/listpatients");
+
+    })
+
+});
+
+app.post("/postdeletedoctor", function(req, res) {
+    details = req.body;
+    Doctor.deleteOne({'_id': details.id},
+    function (err, doc) {
+        if (err) { 
+            res.redirect("/invaliddata");
+            return;
+        }
+        Patient.deleteMany({'doctor': details.id},
+        function(err, doc){
+            console.log("patients deleted")
+        })
+        console.log("doctor deleted")
+        res.redirect("/listdoctors");
 
     })
 
